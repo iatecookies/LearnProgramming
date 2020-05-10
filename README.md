@@ -30,9 +30,9 @@ wat is er veranderd na het uitvoeren van de functie?
 **/
 
 ``
-*// member functie uitleg
+// member functie uitleg
 void Person::get_age() const {
-  this -> age = age;
+    this -> age = age;
 } // Person::get_age
 
 ```
