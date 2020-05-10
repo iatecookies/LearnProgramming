@@ -13,6 +13,7 @@ Altijd commentaar bovenaan iedere file:
 **/
 ```
 
+```
 class dinges {
 public:
 // commentaar hier!
@@ -20,7 +21,7 @@ void doeIets();
 }; // dinges
 // Niet hier!
 void dinges::doeIets() { }
-
+```
 
 ```
 /**
