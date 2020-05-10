@@ -1,6 +1,9 @@
 # LearnProgramming
 All the basic concepts you need to know.
-TO DO: make a list of each file what concepts are covered
+TO DO: 
+- [x] this is a complete item
+- [ ] make a list of each file what concepts are covered
+
 
 ```
 Altijd commentaar bovenaan iedere file:
