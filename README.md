@@ -1,5 +1,6 @@
 # LearnProgramming
-All the basic concepts you need to know :smile:
+All the basic concepts you need to know :smile: .
+
 TO DO: 
 - [x] this is a complete item
 - [ ] make a list of each file what concepts are covered
