@@ -2,6 +2,7 @@
 All the basic concepts you need to know.
 TO DO: make a list of each file what concepts are covered
 
+```
 Altijd commentaar bovenaan iedere file:
 /**
 * klassenaam: beschrijving van klasse/programma
@@ -10,6 +11,7 @@ Altijd commentaar bovenaan iedere file:
 * @file filenaam
 * @date datum laatste wijziging
 **/
+```
 
 class dinges {
 public:
