@@ -19,6 +19,8 @@ void doeIets();
 // Niet hier!
 void dinges::doeIets() { }
 
+
+```
 /**
 * @function functienaam
 * @abstract beschrijving wat de functie doet
@@ -28,6 +30,7 @@ void dinges::doeIets() { }
 * @post exacte beschrijving postconditie
 wat is er veranderd na het uitvoeren van de functie?
 **/
+```
 
 ```
 // member functie uitleg
