@@ -31,7 +31,7 @@ wat is er veranderd na het uitvoeren van de functie?
 
 /**
 *// member functie uitleg
-*void Person::get_age() const {
+* void Person::get_age() const {
 *   this -> age = age;
-*} // Person::get_age
+* } // Person::get_age
 **/
