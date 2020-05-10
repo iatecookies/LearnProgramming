@@ -1,6 +1,8 @@
 # LearnProgramming
 All the basic concepts you need to know :smile: .
 
+> Leren doe je door niet te kijken maar door te doen
+
 TO DO: 
 - [x] this is a complete item
 - [ ] make a list of each file what concepts are covered
