@@ -38,7 +38,7 @@ int main (){
 	cout << "Pointer 1:" << *p1 << endl;
 	cout << "Poitner 2: " << *p2 << endl;
 	
-	cout << "Num1: " << num1 << endl;// value changed to 15
+	cout << "Num1: " << num1 << endl;// value changed to 45
 	cout << "Num2: " << num2 << endl; 
 	*/
 	

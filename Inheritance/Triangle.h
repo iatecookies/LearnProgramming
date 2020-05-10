@@ -8,21 +8,21 @@ using namespace std;
 
 class Triangle {
 	public:
-		//default constructor
+		// default constructor
 		Triangle();
 		
-		//Overload constructor
+		// Overload constructor
 		Triangle(int);
 		
-		//destructor
+		// destructor
 		~Triangle();
 		
-		//Accessor function
+		// Accessor function
 		int getHeight() const;
 			// getHeight - returns height of triangle
 			// @return int - height of triangle
 			
-		//Mutator function
+		// Mutator function
 		void setHeight(int);
 			// setHeight - sets height of triangle
 			// @param int - height of triangle
