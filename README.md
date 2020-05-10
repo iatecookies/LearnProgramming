@@ -4,7 +4,7 @@ TO DO:
 - [x] this is a complete item
 - [ ] make a list of each file what concepts are covered
 
-
+## How to put comments
 ```
 Altijd commentaar bovenaan iedere file:
 /**
