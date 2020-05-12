@@ -48,3 +48,15 @@ void Person::get_age() const {
 } // Person::get_age
 
 ```
+
+## Linking libraries
+```
+1. Compile the object files with -fPIC (position independent code)
+g++ -fPIC -c obj1.cc
+2. Link all object files in a shared object with -shared
+g++ -shared -fPIC -o libcool.so obj1.o obj2.o
+3. Next u can link the library
+g++ -L/path/to/lib -I/path/to/include -o test test.cc -lcool
+
+command -l: libcool is -lcool
+```

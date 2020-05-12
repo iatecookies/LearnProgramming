@@ -13,9 +13,9 @@ int main() {
     getline(cin, input);
     string last = "dik";
     // insert (index, string, start, length)
-    cout << input.insert(3, last, 1,2);
+    cout << input.insert(3, last, 1,2) << endl;
     // input: juni, output: jun ik i -> juniki
-    
+     
     //formatting decimals
     cout.setf(ios::fixed);
     cout.setf(ios::showpoint);
@@ -24,10 +24,18 @@ int main() {
     //iomanip manipulate
     // cout << fixed << showpoint << setprecision(2);
     cout << "type in number: " << endl;
-    double input;
+    double input2;
     
-    cin >> input;
+    cin >> input2;
     
-    cout << input << endl;
+    cout << input2 << endl;
+    
+    // add '\0' or else undefined behaviour. char is not null terminated
+    char name[] = "Cherno";
+    char name2[7] = {'C', 'h', 'e', 'r', 'n', 'o', '\0'};
+    std::cout << name2 << std::endl;
+    name[2] = 'a';
+    
+    std::cout << name << std::endl;
     return 0;
 }

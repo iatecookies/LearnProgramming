@@ -1,16 +1,17 @@
 CC = g++
 
-CompileParms = -c -Wall
+CFLAGS = -c -Wall -Wextra -Wpedantic -std=c++11
 
-OBJS = BMI.o object.o
+OBJS = object.o BMI.o
 
-Opdr: $(OBJS)
+all: $(OBJS)
 	$(CC) $(OBJS) -o object
+	
+object.o: object.cpp BMI.h
+	$(CC) $(CFLAGS) object.cpp
 
 BMI.o: BMI.cpp BMI.h
-	$(CC) $(CompileParms) BMI.cpp
+	$(CC) $(CFLAGS) BMI.cpp
 
-object.o: object.cpp BMI.h
-	$(CC) $(CompileParms) object.cpp
-	
-#uit algo maar kijk makefile(learn) gebruikt zelfde principe
+clean:
+		rm *o object
