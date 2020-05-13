@@ -21,15 +21,21 @@ int main() {
 	
 	for (int i=0; i < 4; i++){
 		cout << dArray[i] << " "; //notice not use dereference operator
-	
+		
 	}
+	cout << endl;
+	
+	for (int i=0; i < 4; i++){
+		cout << *(dArray+i) << " ";
+	}
+	cout << endl;
 	
 	delete [] dArray; //deletes all of the values, pointers still exist and still pointing
 	
-	cout << dArray[0] << endl;
+	//cout << dArray[0] << endl;
 	
 	dArray = NULL;
-	cout << dArray[0] << endl; //pointer does not exists, seg fault
+	//cout << dArray[0] << endl; //pointer does not exists, seg fault
 	
 	return 0;
 }
