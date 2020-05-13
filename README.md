@@ -63,6 +63,8 @@ command -l: libcool is -lcool
 
 ## Valgrind
 1 alloc, 0 frees?
+4000 bytes int is 4 bytes array size 1000
+int *intArray 
 valgrind --leak-check=full ./filename
 
 see in which line there is memory leak
