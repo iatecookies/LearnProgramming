@@ -41,10 +41,17 @@ class Lijst{
     public:
         ~Lijst();
         void voegtoe(T const &nieuw);
+        T max(T const &a, T const &b);
     private:
         T data[500];
         int laatste;
 }; // Lijst
+
+template <typename T>
+Lijst<T>::~Lijst(){
+
+
+} // Destructor
 
 template <typename T>
 void Lijst<T>::voegtoe(T const &nieuw){
@@ -54,12 +61,13 @@ void Lijst<T>::voegtoe(T const &nieuw){
     
 } // Lijst::voegtoe
 
-
 template <typename T>
-Lijst<T>::~Lijst(){
+T Lijst<T>::max(T const &a, T const &b){
+    return a > b ? a : b;
+
+} // max
 
 
-}
 
 int main(int , char* []){
     int a = 4, b = 5;
@@ -69,7 +77,7 @@ int main(int , char* []){
                 << max<float> (c,d) << std::endl
                 << max<int>(c,d) << std::endl; // hier stiekem gaat het nog goed
                 
-    Lijst<int> lijst;
-    lijst.voegtoe(4);
-
+    Lijst<float> lijst;
+    //lijst.voegtoe(4); //segfault
+	std::cout << lijst.max(c,d) << std:: endl;
 } // main
