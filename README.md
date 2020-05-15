@@ -5,7 +5,7 @@ All the basic concepts you need to know :smile: .
 
 TO DO: 
 - [x] thsis is a complete item
-- [ ] make a list of each file what concepts are covered
+- [ ] make a list of each file what conceptre covered
 
 ## How to put comments
 ```
