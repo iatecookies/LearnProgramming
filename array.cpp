@@ -4,7 +4,7 @@
 using namespace std;
 
 // Arrays, Arrays as parameters and multidimensional arrays
-
+// size inside array int guesses[size];  int size = sizeof(guesses)/sizeof(int);
 
 //constants
 const int CAPACITY = 5;

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-
+//vector are from std std::vector<int> voorbeeld
 using namespace std;
 
 //function declaration
