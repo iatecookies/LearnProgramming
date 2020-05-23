@@ -14,4 +14,4 @@ BMI.o: BMI.cpp BMI.h
 	$(CC) $(CFLAGS) BMI.cpp
 
 clean:
-		rm *o object
+		rm *.o object

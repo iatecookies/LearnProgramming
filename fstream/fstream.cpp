@@ -7,6 +7,12 @@ using namespace std;
 /*reading and writing files to stream */
 
 int main(){
+    /*
+    std::string filename;
+    std::cin >> filename;    
+    //2nd argument to add extra names, normal amy, cableb, -> amy caleb amy caleb. avoid overwriting. app for append
+    std::ofstream file(filename.c_str(), std::ios::app)
+    */
 	ifstream infile; //input for filestream
 	ofstream outfile;
 	

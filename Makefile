@@ -1,4 +1,4 @@
-#Tutorial makefile
+ #Tutorial makefile
 
 #method1: just the simple command
 g++ object.cpp BMI.cpp -o objecct

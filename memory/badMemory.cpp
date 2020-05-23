@@ -65,7 +65,7 @@ void test3(){
  by 0x108C13: test3() (in /home/jun/Documents/OefenPM/memory/bad)
 */
 
-void *getString(){
+void *getString(){git 
 	char message[100] = "Hello world";
 	cout << message << endl;
 	return message;

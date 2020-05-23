@@ -14,5 +14,5 @@ cat.o: cat.cpp cat.h
 			$(CC) $(CFLAGS) cat.cpp
 
 clean:
-		rm *o main
+	rm *o main
 
