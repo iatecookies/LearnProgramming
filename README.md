@@ -51,12 +51,30 @@ void Person::get_age() const {
 
 ## Linking libraries
 ```
-1. Compile the object files with -fPIC (position independent code)
-g++ -fPIC -c obj1.cc
-2. Link all object files in a shared object with -shared
-g++ -shared -fPIC -o libcool.so obj1.o obj2.o
-3. Next u can link the library
-g++ -L/path/to/lib -I/path/to/include -o test test.cc -lcool
+1. Compileer object files met de optie -fPIC (position independent code)
+    g++ -fPIC -c obj1.cc
+    g++ -fPIC -c obj2.cc
+2. Link alle object files in een shared object. Gebruik de optie -shared
+    g++ -shared -fPIC -o libcool.so obj1.o obj2.o
+3. Vervolgens kun je tegen deze library linken
+    g++ -L/path/to/lib -I/path/to/include -o test test.cc -lcool
+    
+command -l: libcool.so is -lcool
 
-command -l: libcool is -lcool
+
+Om de testprogramma te bouwen en te linken verzoeken wij je om de eerst de library te linken. Als je dat nog niet heeft gedaan, kan je volgende stappen de volgen:
+
+
+1. Compileer je test bestanden met de optie -fPIC
+    g++ -fPIC -c obj1.cc
+2. Link alle object files in een shared object. Gebruik de optie -shared
+    g++ -shared -fPIC -o libtest.so ojb1.o
+3. Nu kan je executable bestand genereren voor het testprogramma
+    g++ -c testprogramma.cpp
+    g++ -o test testprogramma -ltest
+4. Installeer de library
+    sudo mv libtest.so /usr/lib/
+    sudo ldconfig
+5. Nu kan je het testprogramma gebruiken met de library
+    ./test
 ```
