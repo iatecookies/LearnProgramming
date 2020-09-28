@@ -21,7 +21,7 @@ int main () {
     
     cout << "Enter your name" << endl;
     cin >> name;
-    cout << "Enter your height" << endl;
+    cout << "Enter your height" << endl; 
     cin >> height;
     cout << "Enter you weight" << endl;
     cin >> weight;

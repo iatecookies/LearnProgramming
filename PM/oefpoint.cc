@@ -2,20 +2,17 @@
 //                                                                      
 // Programmeermethoden 2019
 //
-// http://www.liacs.leidenuniv.nl/~kosterswa/pm/oefpoint.cc
+// http://www.liacs.leidenuniv.nl/~kosterswa/pm/pointer.cc
 // C++-programma om te oefenen in het gebruik van pointers.
-// Er moet eerst een enkelverbonden pointerlijst gefabriceerd worden,
+// Er moet een enkelverbonden pointerlijst gefabriceerd worden,
 // waarbij de "vakjes" die met elkaar verbonden worden bestaan uit
 //   1. Een int(eger)
 //   2. Een pointer naar een int(eger) (of NULL)
 //   3. Een pointer naar het volgende vakje (of NULL)
-// Schrijf de functies Afdrukken, Toevoegen en Verwijderen   
+// Schrijf de functies Afdrukken, MaakVakje, Toevoegen en Verwijderen   
 // --- in deze volgorde.  
-// Er is ook een uitwerking van dit programma beschikbaar: 
-//   http://www.liacs.leidenuniv.nl/~kosterswa/pm/pointer.cc
-//
-// Doe hierna
-// http://www.liacs.leidenuniv.nl/~kosterswa/pm/dubbel.cc
+// Dit is de bijbehorende opgave: 
+//   http://www.liacs.leidenuniv.nl/~kosterswa/pm/oefpoint.cc
 //                        
 // Compiler: GNU g++
 // Datum: 1 november 2019
@@ -31,7 +28,7 @@ class vakje {              // een struct mag ook
   public:                  
     int info;    
     int* andere;
-    vakje* volgende;       
+    vakje* volgende;    
 };//vakje
 
 //
@@ -62,46 +59,49 @@ class vakje {              // een struct mag ook
 
 // ************************************************************************
 
+
++
 void Afdrukken (vakje* ingang) {
 // druk lijst met ingang als ingang af 
-  cout << "Lijst afdrukken ..." << endl;
-  
-  //
-  //   XXXXXX
-  //     XX
-  //     XX
-  //   XXXXXX
-  //
-  
+  vakje* p = ingang;  // pointertje om lijst mee door te lopen 
+  while ( p != NULL ) {
+    cout << " # " << p->info << " | ";
+    if ( p->andere != NULL )
+      cout << *(p->andere) << " # " << endl;
+    else
+      cout << "--" << " # " << endl;
+    p = p->volgende;
+  }//while
+  cout << endl;
 }//Afdrukken
  
 void Toevoegen (vakje* & ingang, int een, int twee) {
-// voeg vakje met getallen een en twee erin vooraan lijst ingang toe
+// voeg vakje met een en twee erin vooraan lijst ingang toe
 // preciezer: nieuw vakje met getal een en een POINTER naar een     
 // nieuwe int met getal twee erin                                   
-// mooier: als bijvoorbeeld twee = -1, dan p->andere NULL maken
-  cout << "Voeg een nieuw vakje toe ..." << endl;
-  
-  //
-  //   XXXXXX XXXXXX
-  //     XX     XX
-  //     XX     XX
-  //   XXXXXX XXXXXX
-  //
-  
+// als twee = -1, dan p->andere NULL maken
+  vakje* p;  // hulppointertje
+  p = new vakje;
+  p->info = een;
+  if ( twee != -1 ) {
+    p->andere = new int;
+    *(p->andere) = twee;
+  }//if
+  else
+    p->andere = NULL;
+  p->volgende = ingang;
+  ingang = p;
 }//Toevoegen
 
-void Verwijderen (vakje*& ingang) {
+void Verwijderen (vakje* & ingang) {
 // gooi eerste vakje van lijst ingang weg als ingang niet NULL is
-  cout << "Verwijder een vakje ..." << endl;
-    
-  //
-  //   XXXXXX XXXXXX XXXXXX
-  //     XX     XX     XX
-  //     XX     XX     XX
-  //   XXXXXX XXXXXX XXXXXX
-  //
-  
+  vakje* p = ingang;  // hulppointertje
+  if ( ingang != NULL ) {
+    ingang = ingang->volgende;
+    if ( p->andere != NULL )
+      delete p->andere;   // !!! 
+    delete p;           // in deze volgorde
+  }  // if
 }//Verwijderen
 
 void LeesInGetallen (int & een, int & twee) {
@@ -114,7 +114,7 @@ void LeesInGetallen (int & een, int & twee) {
 
 // *********************************************************************
 
-int main ( ) {
+int main () {
 
   vakje* ingang = NULL; // ingang van de op te bouwen lijst (nu nog leeg)
   char keuze;           // wat wil de gebruiker?
@@ -145,9 +145,10 @@ int main ( ) {
   }//do
   while ( ! ( keuze == 's' ) && ! ( keuze == 'S' ) );
 
-  // while ( ingang != NULL )  // netjes opruimen
-  //   Verwijderen (ingang);
+  while ( ingang != NULL )  // netjes opruimen
+    Verwijderen (ingang);
 
   return 0;
 
 }//main
+

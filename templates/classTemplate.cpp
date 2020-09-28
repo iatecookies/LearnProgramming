@@ -29,6 +29,6 @@ T Bucky<T>::bigger(){
 int main (){
 	Bucky <int> bo(69, 103);	// work with different objects, every T is int now
 	
-	cout << bo.biger();
+	cout << bo.bigger();
 	return 0;
 }
