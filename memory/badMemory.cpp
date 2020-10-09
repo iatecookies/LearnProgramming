@@ -14,15 +14,15 @@ void test1(){
 	for (int i = 0; i<NUM_HEIGHTS; i++){
 		heights[i] = i * 1;
 		cout << "Test1 i: " << i << " heights: " << heights[i] << endl;
-	
+
 	}
 	free(heights); //fix leak
 }
 
-/* 
-invalid write size of 4 
+/*
+invalid write size of 4
 
-Heap summary 
+Heap summary
 
 12 bytes in 1 block, leaked 12 bytes of memory
 */
@@ -32,7 +32,7 @@ void test2(){
 	for (int i = 0; i<NUM_WEIGHTS; i++){
 		weights[i] = 100 + 1;
 		cout << "Test2 i: " << i << " weights: " << weights[i] << endl;
-	
+
 	}
 	//free(weights); //bug
 	weights[0] = 0; // bug from line above, tried to access after freed
@@ -51,10 +51,10 @@ void test3(){
 	int *heights = (int *) malloc(NUM_HEIGHTS * sizeof(*heights));
 	for (int i = 0; i<NUM_HEIGHTS; i++){
 		//if ((heights = NULL)){ //bug
-		if (heights == NULL){ 
+		if (heights == NULL){
 			heights = (int *) malloc(NUM_HEIGHTS * sizeof(*heights));
 		}
-	
+
 	}
 	free (heights); //fix, if there is a leak
 
@@ -65,7 +65,7 @@ void test3(){
  by 0x108C13: test3() (in /home/jun/Documents/OefenPM/memory/bad)
 */
 
-void *getString(){git 
+void *getString(){
 	char message[100] = "Hello world";
 	cout << message << endl;
 	return message;
